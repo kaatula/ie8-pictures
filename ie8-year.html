@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IE8 - изменение за год</title>
+
+	<script type='text/javascript' src='http://code.jquery.com/jquery-2.1.0.js'></script>
+	<link rel="stylesheet" type="text/css" href="http://cdn3.devexpress.com/jslib/15.2.4/css/dx.common.css">
+	<link rel="stylesheet" type="text/css" href="http://cdn3.devexpress.com/jslib/15.2.4/css/dx.light.css">
+	<script type='text/javascript' src="http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/globalize.min.js"></script>
+	<script type='text/javascript' src="http://cdn3.devexpress.com/jslib/15.2.4/js/dx.all.js"></script>
+
+	<style>
+	</style>
+
+</head>
+<body>
+<div id="chartContainer" style="width: 90%;padding: 5%;box-sizing: content-box;height: 600px;"></div>
+<script>
+	var browsersData = [{
+		date: "2014-12-01T00:00:00",
+		ie8: 5.49
+	}, {
+		date: "2015-01-01T00:00:00",
+		ie8: 3.71
+	}, {
+		date: "2015-02-01T00:00:00",
+		ie8: 3.77
+	}, {
+		date: "2015-03-01T00:00:00",
+		ie8: 3.11
+	}, {
+		date: "2015-04-01T00:00:00",
+		ie8: 3.19
+	}, {
+		date: "2015-05-01T00:00:00",
+		ie8: 3.16
+	}, {
+		date: "2015-06-01T00:00:00",
+		ie8: 2.91
+	}, {
+		date: "2015-07-01T00:00:00",
+		ie8: 2.46
+	}, {
+		date: "2015-08-01T00:00:00",
+		ie8: 2.32
+	}, {
+		date: "2015-09-01T00:00:00",
+		ie8: 2.19
+	}, {
+		date: "2015-10-01T00:00:00",
+		ie8: 1.98
+	}, {
+		date: "2015-11-01T00:00:00",
+		ie8: 1.89
+	}];
+
+	$("#chartContainer").dxChart({
+		dataSource: browsersData,
+		series: [{valueField: "ie8", argumentField: "date", name: "IE8"}],
+		argumentAxis: {
+			argumentType: "datetime",
+			label: {
+				format: "monthAndYear"
+			}
+		},
+		tooltip: {
+			enabled: true
+		}
+	})
+</script>
+</body>
+</html>
